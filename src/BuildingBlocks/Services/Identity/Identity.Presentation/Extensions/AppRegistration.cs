@@ -1,6 +1,3 @@
-using Core.CrossCuttingConcerns.Middlewares;
-using Microsoft.Extensions.Options;
-
 namespace Identity.Presentation.Extensions;
 
 public static class AppRegistration

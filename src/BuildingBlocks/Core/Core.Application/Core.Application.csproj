@@ -13,4 +13,8 @@
         <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="9.0.10"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -7,7 +7,7 @@ namespace Core.Application.Base.BaseResult;
 [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
 public class BaseResult<T>
 {
-    public T? Data { get; set; }
+    public T? Data { get; init; }
 
     public IEnumerable<Error>? Errors { get; init; }
 

@@ -5,14 +5,13 @@ namespace Identity.Presentation.Extensions;
 
 public static class ServiceRegistration
 {
-    private static readonly string[] ConfigureOptions = ["en", "tr"];
-
-    public static IServiceCollection AddPresentationServices(this IServiceCollection services,
+    public static void AddPresentationServices(this IServiceCollection services,
         IConfiguration configuration)
     {
         #region Setting Setter
 
         services.Configure<IdentityDbConnection>(configuration.GetSection(nameof(IdentityDbConnection)));
+        services.Configure<JwtTokenOptions>(configuration.GetSection(nameof(JwtTokenOptions)));
 
         #endregion
 
@@ -27,7 +26,7 @@ public static class ServiceRegistration
         });
 
         #endregion
-        
+
         #region JSON Cycle Ignore
 
         services.ConfigureHttpJsonOptions(config =>
@@ -44,7 +43,5 @@ public static class ServiceRegistration
         services.AddControllers();
 
         #endregion
-
-        return services;
     }
 }

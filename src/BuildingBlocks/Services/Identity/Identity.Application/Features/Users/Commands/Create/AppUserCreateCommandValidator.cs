@@ -1,6 +1,5 @@
 using FluentValidation;
 using Identity.Application.Constant;
-using Microsoft.Extensions.Localization;
 
 namespace Identity.Application.Features.Users.Commands.Create;
 

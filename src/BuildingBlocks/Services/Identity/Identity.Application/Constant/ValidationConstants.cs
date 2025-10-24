@@ -2,7 +2,7 @@ namespace Identity.Application.Constant;
 
 public static class ValidationConstants
 {
-    public const string NormalCharacters = @"^[a-zA-ZğüşöçıİĞÜŞÖÇ ]+$";
+    public const string NormalCharacters = @"^[a-zA-ZğüşöçıİĞÜŞÖÇç ]+$";
 
     public const string PhoneNumber = @"^[\d\s\+\-()]+$";
 

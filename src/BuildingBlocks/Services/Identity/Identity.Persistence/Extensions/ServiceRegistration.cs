@@ -1,16 +1,23 @@
+using System.Text;
+using Identity.Application.Contracts.Persistence;
 using Identity.Domain.Entities;
+using Identity.Persistence.Concretes;
 using Identity.Persistence.Context;
 using Identity.Persistence.Options;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Identity.Persistence.Extensions;
 
 public static class ServiceRegistration
 {
-    public static IServiceCollection AddPersistenceServices(this IServiceCollection services)
+    public static void AddPersistenceServices(this IServiceCollection services,
+        IConfiguration configuration)
     {
         #region Entity Framework Services
 
@@ -36,7 +43,33 @@ public static class ServiceRegistration
 
         #endregion
 
+        services.AddScoped<IJwtService, JwtService>();
 
-        return services;
+        #region JWT Authentication
+
+        services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, opt =>
+        {
+            var jwtOptions = configuration.GetSection(nameof(JwtTokenOptions)).Get<JwtTokenOptions>()
+                             ?? throw new InvalidOperationException(
+                                 "JwtTokenOptions section missing in configuration.");
+
+            opt.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateIssuerSigningKey = true,
+                ValidateLifetime = true,
+                ValidIssuer = jwtOptions.Issuer,
+                ValidAudience = jwtOptions.Audience,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.Key!)),
+                ClockSkew = TimeSpan.FromSeconds(5)
+            };
+        });
+
+        #endregion
     }
 }

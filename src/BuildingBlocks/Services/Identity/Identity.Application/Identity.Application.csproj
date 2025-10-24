@@ -15,11 +15,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Features\Users\Commands\Remove\"/>
-        <Folder Include="Features\Users\Commands\Update\"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <ProjectReference Include="..\..\..\Core\Core.Application\Core.Application.csproj"/>
         <ProjectReference Include="..\..\..\Core\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj"/>
         <ProjectReference Include="..\Identity.Domain\Identity.Domain.csproj"/>
@@ -48,6 +43,14 @@
           <AutoGen>True</AutoGen>
           <DependentUpon>IdentityResources.tr.resx</DependentUpon>
         </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Features\UserRoles\Commands\Delete\" />
+      <Folder Include="Features\UserRoles\Commands\Update\" />
+      <Folder Include="Features\UserRoles\Mappers\" />
+      <Folder Include="Features\UserRoles\Queries\GetAll\" />
+      <Folder Include="Features\UserRoles\Queries\GetById\" />
     </ItemGroup>
 
 </Project>

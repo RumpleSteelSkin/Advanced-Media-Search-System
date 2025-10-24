@@ -1,9 +1,10 @@
 using Core.Application.Base.BaseResult;
+using Core.Application.Pipelines.Transactional;
 using MediatR;
 
 namespace Identity.Application.Features.Users.Commands.Create;
 
-public class AppUserCreateCommand : IRequest<BaseResult<object>>
+public record AppUserCreateCommand : IRequest<BaseResult<object>>, ITransactional
 {
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
