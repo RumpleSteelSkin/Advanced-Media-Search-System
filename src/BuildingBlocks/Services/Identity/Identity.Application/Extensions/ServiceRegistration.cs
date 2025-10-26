@@ -1,4 +1,5 @@
 using System.Reflection;
+using Core.Application.Pipelines.Authorization;
 using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transactional;
 using Core.Application.Pipelines.Validation;
@@ -18,6 +19,7 @@ public static class ServiceRegistration
         {
             cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
             cfg.AddOpenBehavior(typeof(TransactionalPipeline<,>));
+            cfg.AddOpenBehavior(typeof(AuthorizationPipeline<,>));
             cfg.AddOpenBehavior(typeof(ValidationPipeline<,>));
             cfg.AddOpenBehavior(typeof(LoggingPipeline<,>));
         });

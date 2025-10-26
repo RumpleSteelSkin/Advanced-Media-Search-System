@@ -1,10 +1,12 @@
 using Core.Application.Base.BaseResult;
+using Core.Application.Pipelines.Authorization;
 using Core.Application.Pipelines.Transactional;
+using Identity.Application.Constant;
 using MediatR;
 
 namespace Identity.Application.Features.Users.Commands.Update;
 
-public record AppUserUpdateCommand : IRequest<BaseResult<object>>, ITransactional
+public record AppUserUpdateCommand : IRequest<BaseResult<object>>, ITransactional, IRoleExists
 {
     public Guid Id { get; set; }
     public string? FirstName { get; set; }
@@ -12,4 +14,5 @@ public record AppUserUpdateCommand : IRequest<BaseResult<object>>, ITransactiona
     public string? Email { get; set; }
     public string? UserName { get; set; }
     public string? Password { get; set; }
+    public string[] Roles { get; } = [GeneralRoles.Admin, GeneralRoles.User];
 }

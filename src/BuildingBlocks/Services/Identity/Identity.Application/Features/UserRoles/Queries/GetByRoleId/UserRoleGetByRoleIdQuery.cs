@@ -3,9 +3,9 @@ using Core.Application.Pipelines.Authorization;
 using Identity.Application.Constant;
 using MediatR;
 
-namespace Identity.Application.Features.Users.Queries.GetAll;
+namespace Identity.Application.Features.UserRoles.Queries.GetByRoleId;
 
-public record AppUserGetAllQuery : IRequest<BaseResult<IEnumerable<AppUserGetAllQueryResponseDto>>>, IRoleExists
+public record UserRoleGetByRoleIdQuery(Guid RoleId) : IRequest<BaseResult<UserRoleGetByRoleIdQueryResponseDto>>,IRoleExists
 {
     public string[] Roles { get; } = [GeneralRoles.Admin];
-};
+}

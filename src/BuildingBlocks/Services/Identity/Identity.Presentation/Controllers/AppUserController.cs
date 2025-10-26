@@ -6,14 +6,17 @@ using Identity.Application.Features.Users.Queries.GetAll;
 using Identity.Application.Features.Users.Queries.GetById;
 using Identity.Application.Features.Users.Queries.Login;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Identity.Presentation.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class AppUserController(IMediator mediator) : ControllerBase
 {
+    [AllowAnonymous]
     [HttpPost]
     [ProducesResponseType(typeof(BaseResult<object>), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(BaseResult<object>), StatusCodes.Status400BadRequest)]
@@ -42,6 +45,7 @@ public class AppUserController(IMediator mediator) : ControllerBase
         return response.IsSuccess ? Ok(response) : NotFound(response);
     }
 
+    [AllowAnonymous]
     [HttpPost("Login")]
     [ProducesResponseType(typeof(BaseResult<AppUserLoginQueryResponseDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BaseResult<AppUserLoginQueryResponseDto>), StatusCodes.Status404NotFound)]

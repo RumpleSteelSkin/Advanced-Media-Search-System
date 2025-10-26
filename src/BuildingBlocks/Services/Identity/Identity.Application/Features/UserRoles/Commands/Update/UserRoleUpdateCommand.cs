@@ -4,9 +4,10 @@ using Core.Application.Pipelines.Transactional;
 using Identity.Application.Constant;
 using MediatR;
 
-namespace Identity.Application.Features.Roles.Commands.Create;
+namespace Identity.Application.Features.UserRoles.Commands.Update;
 
-public record RoleCreateCommand(string Name) : IRequest<BaseResult<object>>, ITransactional, IRoleExists
+public record UserRoleUpdateCommand(Guid UserId, Guid ExistRoleId, Guid NewRoleId)
+    : IRequest<BaseResult<object>>, ITransactional, IRoleExists
 {
     public string[] Roles { get; } = [GeneralRoles.Admin];
 }

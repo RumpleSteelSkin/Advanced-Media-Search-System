@@ -45,12 +45,4 @@
         </Compile>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Features\UserRoles\Commands\Delete\" />
-      <Folder Include="Features\UserRoles\Commands\Update\" />
-      <Folder Include="Features\UserRoles\Mappers\" />
-      <Folder Include="Features\UserRoles\Queries\GetAll\" />
-      <Folder Include="Features\UserRoles\Queries\GetById\" />
-    </ItemGroup>
-
 </Project>

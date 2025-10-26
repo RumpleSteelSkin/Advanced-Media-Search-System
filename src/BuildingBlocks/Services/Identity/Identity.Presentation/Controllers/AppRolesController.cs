@@ -5,12 +5,14 @@ using Identity.Application.Features.Roles.Commands.Update;
 using Identity.Application.Features.Roles.Queries.GetAll;
 using Identity.Application.Features.Roles.Queries.GetById;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Identity.Presentation.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class AppRoleController(IMediator mediator) : ControllerBase
 {
     [HttpPost]
