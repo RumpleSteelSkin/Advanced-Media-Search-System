@@ -4,6 +4,7 @@ using Identity.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Identity.Persistence.Migrations
 {
     [DbContext(typeof(IdentityContext))]
-    partial class IdentityContextModelSnapshot : ModelSnapshot
+    [Migration("20251027140313_Refresh_Token_Added")]
+    partial class Refresh_Token_Added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,9 +31,6 @@ namespace Identity.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
                     b.Property<DateTime>("Expires")
                         .HasColumnType("datetime2");
 
@@ -43,9 +43,6 @@ namespace Identity.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
-
-                    b.Property<DateTime>("RevokedAt")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Token")
                         .IsRequired()

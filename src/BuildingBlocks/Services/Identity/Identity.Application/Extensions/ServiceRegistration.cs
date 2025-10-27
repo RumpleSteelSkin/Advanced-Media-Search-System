@@ -6,6 +6,8 @@ using Core.Application.Pipelines.Validation;
 using Core.CrossCuttingConcerns.Loggers.Serilog.Base;
 using Core.CrossCuttingConcerns.Loggers.Serilog.Loggers;
 using FluentValidation;
+using Identity.Application.Concretes;
+using Identity.Application.Contracts;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Identity.Application.Extensions;
@@ -24,7 +26,7 @@ public static class ServiceRegistration
             cfg.AddOpenBehavior(typeof(LoggingPipeline<,>));
         });
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-
+        services.AddScoped<IJwtService, JwtService>();
         #region Serilog Services
 
         services.AddTransient<LoggerService, MsSqlLogger>();

@@ -1,6 +1,6 @@
 using AutoMapper;
 using Core.Application.Base.BaseResult;
-using Identity.Application.Contracts.Persistence;
+using Identity.Application.Contracts;
 using Identity.Application.Features.Shared.DTOs;
 using Identity.Domain.Entities;
 using MediatR;

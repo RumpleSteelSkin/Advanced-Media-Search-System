@@ -1,6 +1,6 @@
-namespace Identity.Application.Features.Users.Queries.Login;
+namespace Identity.Application.Features.Users.Commands.RefreshToken;
 
-public class AppUserLoginQueryResponseDto
+public class RefreshTokenCommandResponseDto
 {
     public string? Token { get; set; }
     public DateTime Expire { get; set; }

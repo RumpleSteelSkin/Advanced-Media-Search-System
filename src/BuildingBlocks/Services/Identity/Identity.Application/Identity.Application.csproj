@@ -10,6 +10,7 @@
         <PackageReference Include="AutoMapper" Version="14.0.0"/>
         <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0"/>
         <PackageReference Include="MediatR" Version="13.0.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.10" />
         <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="9.0.10"/>
         <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="9.0.10"/>
     </ItemGroup>
@@ -18,6 +19,7 @@
         <ProjectReference Include="..\..\..\Core\Core.Application\Core.Application.csproj"/>
         <ProjectReference Include="..\..\..\Core\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj"/>
         <ProjectReference Include="..\Identity.Domain\Identity.Domain.csproj"/>
+        <ProjectReference Include="..\Identity.Persistence\Identity.Persistence.csproj" />
     </ItemGroup>
 
     <ItemGroup>

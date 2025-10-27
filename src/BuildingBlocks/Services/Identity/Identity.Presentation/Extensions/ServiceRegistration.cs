@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using Identity.Persistence.Options;
+using Identity.Presentation.Services;
 
 namespace Identity.Presentation.Extensions;
 
@@ -33,6 +34,12 @@ public static class ServiceRegistration
         {
             config.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
         });
+
+        #endregion
+
+        #region Refresh Token Cleaner
+
+        services.AddHostedService<RefreshTokenCleanupService>();
 
         #endregion
 

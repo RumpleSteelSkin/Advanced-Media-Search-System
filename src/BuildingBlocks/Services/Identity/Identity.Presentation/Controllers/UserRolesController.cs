@@ -54,7 +54,7 @@ public class UserRoleController(IMediator mediator) : ControllerBase
     }
 
 
-    [HttpDelete(("{userId:guid}/{roleId:guid}"))]
+    [HttpDelete("{userId:guid}/{roleId:guid}")]
     [ProducesResponseType(typeof(BaseResult<object>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BaseResult<object>), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<BaseResult<object>>> DeleteById(Guid userId, Guid roleId)

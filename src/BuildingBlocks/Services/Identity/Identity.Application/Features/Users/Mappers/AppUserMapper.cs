@@ -1,9 +1,11 @@
 using AutoMapper;
 using Identity.Application.Features.Shared.DTOs;
 using Identity.Application.Features.Users.Commands.Create;
+using Identity.Application.Features.Users.Commands.RefreshToken;
 using Identity.Application.Features.Users.Commands.Update;
 using Identity.Application.Features.Users.Queries.GetAll;
 using Identity.Application.Features.Users.Queries.GetById;
+using Identity.Application.Features.Users.Queries.Login;
 using Identity.Domain.Entities;
 
 namespace Identity.Application.Features.Users.Mappers;
@@ -18,5 +20,7 @@ public class AppUserMapper : Profile
         CreateMap<AppUserUpdateCommand, AppUser>()
             .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
         CreateMap<AppUser, AppUserGetAllQueryResponseDto>();
+
+        CreateMap<AppUserLoginQueryResponseDto, RefreshTokenCommandResponseDto>();
     }
 }

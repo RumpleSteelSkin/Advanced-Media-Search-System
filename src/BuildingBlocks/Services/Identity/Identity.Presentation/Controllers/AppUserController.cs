@@ -44,18 +44,9 @@ public class AppUserController(IMediator mediator) : ControllerBase
         var response = await mediator.Send(new AppUserGetAllQuery());
         return response.IsSuccess ? Ok(response) : NotFound(response);
     }
+    
 
-    [AllowAnonymous]
-    [HttpPost("Login")]
-    [ProducesResponseType(typeof(BaseResult<AppUserLoginQueryResponseDto>), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(BaseResult<AppUserLoginQueryResponseDto>), StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<BaseResult<AppUserLoginQueryResponseDto>>> Login([FromBody] AppUserLoginQuery query)
-    {
-        var response = await mediator.Send(query);
-        return response.IsSuccess ? Ok(response) : BadRequest(response);
-    }
-
-    [HttpDelete(("{id:guid}"))]
+    [HttpDelete("{id:guid}")]
     [ProducesResponseType(typeof(BaseResult<object>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BaseResult<object>), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<BaseResult<object>>> DeleteById(Guid id)

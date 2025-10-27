@@ -11,4 +11,6 @@ public class AppUser : IdentityUser<Guid>
 
     public bool IsDeleted { get; set; }
     public DateTime? DeletedAt { get; set; }
+    
+    public ICollection<AppRefreshToken> RefreshTokens { get; set; } = [];
 }

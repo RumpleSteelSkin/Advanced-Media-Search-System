@@ -1,7 +1,5 @@
 using System.Text;
-using Identity.Application.Contracts.Persistence;
 using Identity.Domain.Entities;
-using Identity.Persistence.Concretes;
 using Identity.Persistence.Context;
 using Identity.Persistence.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -42,9 +40,7 @@ public static class ServiceRegistration
             .AddDefaultTokenProviders();
 
         #endregion
-
-        services.AddScoped<IJwtService, JwtService>();
-
+        
         #region JWT Authentication
 
         services.AddAuthentication(options =>

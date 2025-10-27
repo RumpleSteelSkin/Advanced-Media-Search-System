@@ -44,7 +44,7 @@ public class AppRoleController(IMediator mediator) : ControllerBase
     }
 
 
-    [HttpDelete(("{id:guid}"))]
+    [HttpDelete("{id:guid}")]
     [ProducesResponseType(typeof(BaseResult<object>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BaseResult<object>), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<BaseResult<object>>> DeleteById(Guid id)

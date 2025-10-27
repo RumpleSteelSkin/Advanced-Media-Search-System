@@ -13,4 +13,6 @@ public class IdentityContext(DbContextOptions options) : IdentityDbContext<AppUs
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
+    
+    public DbSet<AppRefreshToken> RefreshTokens { get; set; }
 }
