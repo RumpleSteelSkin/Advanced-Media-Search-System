@@ -1,4 +1,4 @@
-namespace FileService.Persistence.Settings;
+namespace Core.Configuration.Settings;
 
 public class MinioSettings
 {

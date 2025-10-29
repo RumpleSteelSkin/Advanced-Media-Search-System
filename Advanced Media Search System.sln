@@ -19,9 +19,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{D2EE83AA-BA72-45D5-9850-F445DE6F4BDF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{0A90B4AE-FFEC-47A9-8470-E741EBBBB652}"
-	ProjectSection(SolutionItems) = preProject
-		src\BuildingBlocks\Core\appsettings.shared.json = src\BuildingBlocks\Core\appsettings.shared.json
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Application", "src\BuildingBlocks\Services\Identity\Identity.Application\Identity.Application.csproj", "{70EF7016-5329-428B-97CA-69FF4EFF3D00}"
 EndProject
@@ -44,6 +41,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileService.Presentation", "src\BuildingBlocks\Services\FileService\FileService.Presentation\FileService.Presentation.csproj", "{45D28710-C06E-4E8B-9FA9-0D12AB2A544F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Configuration", "src\BuildingBlocks\Core\Core.Configuration\Core.Configuration.csproj", "{F9902096-996D-4F8E-A7DC-C3B8DAB98242}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediaCatalogService", "MediaCatalogService", "{465C6F91-A695-4416-B2BE-0FE6214816A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,6 +69,7 @@ Global
 		{B25FA819-6DDA-46E3-A93E-008AD1341AA3} = {3C333FE7-059A-4136-B8C7-15E5573C40DC}
 		{45D28710-C06E-4E8B-9FA9-0D12AB2A544F} = {3C333FE7-059A-4136-B8C7-15E5573C40DC}
 		{F9902096-996D-4F8E-A7DC-C3B8DAB98242} = {0A90B4AE-FFEC-47A9-8470-E741EBBBB652}
+		{465C6F91-A695-4416-B2BE-0FE6214816A9} = {E68511B7-8982-45D8-88CD-87C233A3CCB1}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{70EF7016-5329-428B-97CA-69FF4EFF3D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

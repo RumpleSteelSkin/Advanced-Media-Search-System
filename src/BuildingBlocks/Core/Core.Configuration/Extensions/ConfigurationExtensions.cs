@@ -25,6 +25,8 @@ public static class ConfigurationExtensions
         IConfiguration configuration)
     {
         services.Configure<JwtTokenOptions>(configuration.GetSection(nameof(JwtTokenOptions)));
+        services.Configure<SerilogLogConfigurations>(configuration.GetSection(nameof(SerilogLogConfigurations)));
+        services.Configure<MinioSettings>(configuration.GetSection(nameof(MinioSettings)));
         return services;
     }
 }

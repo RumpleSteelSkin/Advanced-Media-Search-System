@@ -1,12 +1,12 @@
 using System.Text;
+using Core.Configuration.Settings;
 using FileService.Domain.Interfaces;
-using FileService.Persistence.Settings;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Minio;
 using Minio.DataModel.Args;
-using MinioClientFactory = FileService.Persistence.Factories.MinioClientFactory;
+using MinioClientFactory = Core.Configuration.Factories.MinioClientFactory;
 
 namespace FileService.Persistence.Services;
 

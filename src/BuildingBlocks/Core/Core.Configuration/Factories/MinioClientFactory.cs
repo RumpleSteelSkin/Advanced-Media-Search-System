@@ -1,8 +1,8 @@
-using FileService.Persistence.Settings;
+using Core.Configuration.Settings;
 using Microsoft.Extensions.Options;
 using Minio;
 
-namespace FileService.Persistence.Factories;
+namespace Core.Configuration.Factories;
 
 public class MinioClientFactory(IOptions<MinioSettings> options)
 {

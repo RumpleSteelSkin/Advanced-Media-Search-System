@@ -1,5 +1,5 @@
+using Core.Configuration.Factories;
 using FileService.Domain.Interfaces;
-using FileService.Persistence.Factories;
 using FileService.Persistence.Services;
 using Microsoft.Extensions.DependencyInjection;
 
