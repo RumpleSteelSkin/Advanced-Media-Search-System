@@ -12,7 +12,6 @@ public static class ServiceRegistration
         #region Setting Setter
 
         services.Configure<IdentityDbConnection>(configuration.GetSection(nameof(IdentityDbConnection)));
-        services.Configure<JwtTokenOptions>(configuration.GetSection(nameof(JwtTokenOptions)));
 
         #endregion
 

@@ -12,7 +12,9 @@ public class AppUserRemoveCommandHandler(UserManager<AppUser> userManager)
     {
         var user = await userManager.FindByIdAsync(request.Id.ToString());
         if (user is null) return BaseResult<object>.NotFound("User not found");
-        if (user.IsDeleted) return BaseResult<object>.Fail($"The user has already been deleted on {user.DeletedAt?.ToShortDateString()}");
+        if (user.IsDeleted)
+            return BaseResult<object>.Fail(
+                $"The user has already been deleted on {user.DeletedAt?.ToShortDateString()}");
         user.DeletedAt = DateTime.UtcNow;
         user.IsDeleted = true;
         user.LockoutEnabled = true;

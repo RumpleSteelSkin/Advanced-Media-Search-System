@@ -10,6 +10,5 @@ public class UserRolesMapper : Profile
     {
         CreateMap<AppRole, RoleDto>();
         CreateMap<AppUser, UserDto>();
-        
     }
 }

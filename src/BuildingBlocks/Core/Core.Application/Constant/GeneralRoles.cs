@@ -1,4 +1,4 @@
-namespace Identity.Application.Constant;
+namespace Core.Application.Constant;
 
 public static class GeneralRoles
 {

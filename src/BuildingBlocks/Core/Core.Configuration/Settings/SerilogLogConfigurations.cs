@@ -1,4 +1,4 @@
-namespace Core.CrossCuttingConcerns.Loggers.Serilog.Configurations;
+namespace Core.Configuration.Settings;
 
 public class SerilogLogConfigurations
 {

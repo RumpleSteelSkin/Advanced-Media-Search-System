@@ -58,7 +58,7 @@ namespace Identity.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("RefreshTokens");
+                    b.ToTable("RefreshTokens", (string)null);
                 });
 
             modelBuilder.Entity("Identity.Domain.Entities.AppUser", b =>

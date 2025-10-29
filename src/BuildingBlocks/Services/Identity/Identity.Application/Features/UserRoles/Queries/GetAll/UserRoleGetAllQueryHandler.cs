@@ -22,7 +22,7 @@ public class UserRoleGetAllQueryHandler(
             join r in context.Set<AppRole>() on ur.RoleId equals r.Id
             where !u.IsDeleted && !r.IsDeleted
             select new { u, r };
-        
+
         var groupedDto = await query
             .GroupBy(x => x.u)
             .Select(g => new UserRoleGetAllQueryResponseDto

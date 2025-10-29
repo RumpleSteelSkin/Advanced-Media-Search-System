@@ -33,12 +33,12 @@ public class RefreshTokenCommandHandler(
 
         if (token.User == null)
             return BaseResult<RefreshTokenCommandResponseDto>.Fail("User not found");
-        
+
         token.IsUsed = true;
         token.IsRevoked = true;
         token.RevokedAt = DateTime.UtcNow;
         await context.SaveChangesAsync(cancellationToken);
-        
+
         var userDto = new UserDto
         {
             UserName = token.User.UserName,

@@ -10,7 +10,7 @@ public class AppRefreshTokenConfiguration : IEntityTypeConfiguration<AppRefreshT
     {
         builder
             .HasKey(r => r.Id);
-        
+
         builder
             .HasOne(r => r.User)
             .WithMany(u => u.RefreshTokens)

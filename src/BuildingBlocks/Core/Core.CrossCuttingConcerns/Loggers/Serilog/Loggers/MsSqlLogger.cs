@@ -1,5 +1,5 @@
+using Core.Configuration.Settings;
 using Core.CrossCuttingConcerns.Loggers.Serilog.Base;
-using Core.CrossCuttingConcerns.Loggers.Serilog.Configurations;
 using Microsoft.Extensions.Configuration;
 using Serilog;
 using Serilog.Sinks.MSSqlServer;
@@ -13,8 +13,8 @@ public class MsSqlLogger : LoggerService
         var logConfig = configuration.GetSection(nameof(SerilogLogConfigurations)).Get<SerilogLogConfigurations>() ??
                         throw new InvalidOperationException("SerilogLogConfigurations not found");
 
-        Logger = new LoggerConfiguration().WriteTo.MSSqlServer(connectionString: logConfig.ConnectionString,
-                sinkOptions: new MSSqlServerSinkOptions
+        Logger = new LoggerConfiguration().WriteTo.MSSqlServer(logConfig.ConnectionString,
+                new MSSqlServerSinkOptions
                     { TableName = logConfig.TableName, AutoCreateSqlTable = logConfig.AutoCreateSqlTable })
             .CreateLogger();
     }

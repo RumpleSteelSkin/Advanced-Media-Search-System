@@ -1,4 +1,5 @@
 using FileService.Domain.Interfaces;
+using FileService.Persistence.Factories;
 using FileService.Persistence.Services;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -9,5 +10,6 @@ public static class ServiceRegistration
     public static void AddPersistenceServices(this IServiceCollection services)
     {
         services.AddScoped<IFileStorageService, MinioStorageService>();
+        services.AddSingleton<MinioClientFactory>();
     }
 }

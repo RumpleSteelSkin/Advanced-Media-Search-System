@@ -27,6 +27,7 @@ public static class ServiceRegistration
         });
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         services.AddScoped<IJwtService, JwtService>();
+
         #region Serilog Services
 
         services.AddTransient<LoggerService, MsSqlLogger>();

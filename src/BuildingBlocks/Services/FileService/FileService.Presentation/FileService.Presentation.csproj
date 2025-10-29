@@ -7,13 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MediatR" Version="13.1.0" />
+        <PackageReference Include="MediatR" Version="13.1.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.10"/>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\FileService.Application\FileService.Application.csproj" />
-      <ProjectReference Include="..\FileService.Persistence\FileService.Persistence.csproj" />
+        <ProjectReference Include="..\FileService.Application\FileService.Application.csproj"/>
+        <ProjectReference Include="..\FileService.Persistence\FileService.Persistence.csproj"/>
     </ItemGroup>
 
 </Project>

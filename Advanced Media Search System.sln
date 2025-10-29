@@ -19,6 +19,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{D2EE83AA-BA72-45D5-9850-F445DE6F4BDF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{0A90B4AE-FFEC-47A9-8470-E741EBBBB652}"
+	ProjectSection(SolutionItems) = preProject
+		src\BuildingBlocks\Core\appsettings.shared.json = src\BuildingBlocks\Core\appsettings.shared.json
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Application", "src\BuildingBlocks\Services\Identity\Identity.Application\Identity.Application.csproj", "{70EF7016-5329-428B-97CA-69FF4EFF3D00}"
 EndProject
@@ -39,6 +42,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileService.Persistence", "src\BuildingBlocks\Services\FileService\FileService.Persistence\FileService.Persistence.csproj", "{B25FA819-6DDA-46E3-A93E-008AD1341AA3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileService.Presentation", "src\BuildingBlocks\Services\FileService\FileService.Presentation\FileService.Presentation.csproj", "{45D28710-C06E-4E8B-9FA9-0D12AB2A544F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Configuration", "src\BuildingBlocks\Core\Core.Configuration\Core.Configuration.csproj", "{F9902096-996D-4F8E-A7DC-C3B8DAB98242}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +69,7 @@ Global
 		{791E065D-C79B-4A91-AD55-71AEFC1D3638} = {3C333FE7-059A-4136-B8C7-15E5573C40DC}
 		{B25FA819-6DDA-46E3-A93E-008AD1341AA3} = {3C333FE7-059A-4136-B8C7-15E5573C40DC}
 		{45D28710-C06E-4E8B-9FA9-0D12AB2A544F} = {3C333FE7-059A-4136-B8C7-15E5573C40DC}
+		{F9902096-996D-4F8E-A7DC-C3B8DAB98242} = {0A90B4AE-FFEC-47A9-8470-E741EBBBB652}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{70EF7016-5329-428B-97CA-69FF4EFF3D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -106,5 +112,9 @@ Global
 		{45D28710-C06E-4E8B-9FA9-0D12AB2A544F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45D28710-C06E-4E8B-9FA9-0D12AB2A544F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45D28710-C06E-4E8B-9FA9-0D12AB2A544F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9902096-996D-4F8E-A7DC-C3B8DAB98242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9902096-996D-4F8E-A7DC-C3B8DAB98242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9902096-996D-4F8E-A7DC-C3B8DAB98242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9902096-996D-4F8E-A7DC-C3B8DAB98242}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

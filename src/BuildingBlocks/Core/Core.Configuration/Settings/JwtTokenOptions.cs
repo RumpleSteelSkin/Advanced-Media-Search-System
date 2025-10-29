@@ -1,4 +1,4 @@
-namespace Identity.Persistence.Options;
+namespace Core.Configuration.Settings;
 
 public class JwtTokenOptions
 {

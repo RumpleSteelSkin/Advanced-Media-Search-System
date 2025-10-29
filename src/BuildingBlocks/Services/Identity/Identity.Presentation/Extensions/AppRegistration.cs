@@ -9,7 +9,7 @@ public static class AppRegistration
         if (app.Environment.IsDevelopment()) app.MapOpenApi();
 
         #endregion
-        
+
         #region Other Services
 
         app.UseCors("AllowAll");

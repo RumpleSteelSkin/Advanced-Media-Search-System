@@ -13,7 +13,7 @@ public class AppUserGetAllQueryHandler(UserManager<AppUser> userManager, IMapper
     public async Task<BaseResult<IEnumerable<AppUserGetAllQueryResponseDto>>> Handle(AppUserGetAllQuery request,
         CancellationToken cancellationToken)
     {
-        var users = await userManager.Users.ToListAsync(cancellationToken: cancellationToken);
+        var users = await userManager.Users.ToListAsync(cancellationToken);
         var response = mapper.Map<IEnumerable<AppUserGetAllQueryResponseDto>>(users);
         return BaseResult<IEnumerable<AppUserGetAllQueryResponseDto>>.Success(response);
     }

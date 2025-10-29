@@ -2,6 +2,7 @@ namespace Core.CrossCuttingConcerns.Loggers.Serilog.Models;
 
 public class LogDetail
 {
+    public string? Project { get; set; }
     public string? MethodName { get; set; }
 
     public string? User { get; set; }

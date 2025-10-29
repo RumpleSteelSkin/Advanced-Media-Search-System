@@ -4,7 +4,6 @@ using Identity.Application.Features.Users.Commands.Remove;
 using Identity.Application.Features.Users.Commands.Update;
 using Identity.Application.Features.Users.Queries.GetAll;
 using Identity.Application.Features.Users.Queries.GetById;
-using Identity.Application.Features.Users.Queries.Login;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -44,7 +43,7 @@ public class AppUserController(IMediator mediator) : ControllerBase
         var response = await mediator.Send(new AppUserGetAllQuery());
         return response.IsSuccess ? Ok(response) : NotFound(response);
     }
-    
+
 
     [HttpDelete("{id:guid}")]
     [ProducesResponseType(typeof(BaseResult<object>), StatusCodes.Status200OK)]

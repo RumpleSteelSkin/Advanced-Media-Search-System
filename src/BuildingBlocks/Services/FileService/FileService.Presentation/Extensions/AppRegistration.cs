@@ -6,10 +6,7 @@ public static class AppRegistration
     {
         #region Development
 
-        if (app.Environment.IsDevelopment())
-        {
-            app.MapOpenApi();
-        }
+        if (app.Environment.IsDevelopment()) app.MapOpenApi();
 
         #endregion
 
@@ -17,6 +14,8 @@ public static class AppRegistration
 
         app.UseHttpsRedirection();
         app.MapControllers();
+        app.UseAuthentication();
+        app.UseAuthorization();
 
         #endregion
 

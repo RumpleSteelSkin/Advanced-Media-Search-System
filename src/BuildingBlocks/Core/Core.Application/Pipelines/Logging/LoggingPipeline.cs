@@ -18,6 +18,7 @@ public class LoggingPipeline<TRequest, TResponse>(LoggerService logger, IHttpCon
     {
         var log = new LogDetail
         {
+            Project = typeof(TRequest).AssemblyQualifiedName?.Split(',').FirstOrDefault(),
             MethodName = typeof(TRequest).Name,
             Parameters = [new LogParameter { Type = request.GetType().Name, Value = request.ToString() }],
             User = contextAccessor.HttpContext?.User?.Claims
