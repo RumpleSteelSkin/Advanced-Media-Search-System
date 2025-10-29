@@ -1,15 +1,13 @@
 using Core.Infrastructure.Extensions;
+using MediaCatalog.Application.Consumers;
 
-namespace FileService.Presentation.Extensions;
+namespace MediaCatalog.Presentation.Extensions;
 
 public static class ServiceRegistration
 {
     public static void AddPresentationServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddHttpContextAccessor();
         services.AddOpenApi();
-        services.AddControllers();
-        services.AddAuthorization();
-        services.AddCoreMassTransit(configuration);
+        services.AddCoreMassTransitWithConsumers<FileUploadedEventConsumer>(configuration);
     }
 }

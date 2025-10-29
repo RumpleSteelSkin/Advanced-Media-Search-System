@@ -7,5 +7,7 @@ namespace FileService.Application.Features.FileRecord.Commands.UploadFile;
 
 public record UploadFileCommand(IFormFile File) : IRequest<string>, IRoleExists
 {
+    public string? FileName { get; set; }
+    public string? Description { get; set; }
     public string[] Roles { get; } = [GeneralRoles.Admin];
 }

@@ -7,16 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
-        <PackageReference Include="MediatR" Version="13.1.0"/>
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.10"/>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6"/>
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\..\Core\Core.Configuration\Core.Configuration.csproj"/>
         <ProjectReference Include="..\..\..\Core\Core.Infrastructure\Core.Infrastructure.csproj" />
-        <ProjectReference Include="..\FileService.Application\FileService.Application.csproj"/>
-        <ProjectReference Include="..\FileService.Persistence\FileService.Persistence.csproj"/>
+        <ProjectReference Include="..\MediaCatalog.Application\MediaCatalog.Application.csproj" />
     </ItemGroup>
 
 </Project>
