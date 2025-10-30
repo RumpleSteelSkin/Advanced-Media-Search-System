@@ -1,9 +1,11 @@
+using Core.Persistence.Entities;
+
 namespace MediaCatalog.Domain.Entities;
 
-public class MediaFileObject
+public class MediaFileObject : Entity<Guid>
 {
-    public Guid Id { get; init; }
     public string? Url { get; set; }
+    public string? Title { get; set; }
     public string? FileName { get; set; }
     public string? Description { get; set; }
     public string? ContentType { get; set; }

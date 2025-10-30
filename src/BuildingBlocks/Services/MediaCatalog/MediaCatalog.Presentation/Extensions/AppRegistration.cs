@@ -13,7 +13,8 @@ public static class AppRegistration
         #region Other Services
         
         app.UseHttpsRedirection();
-                  
+        app.UseAuthentication();
+        app.UseAuthorization();
         #endregion
         
         app.Run();

@@ -8,12 +8,21 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.10">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.10">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\..\..\Core\Core.Configuration\Core.Configuration.csproj"/>
         <ProjectReference Include="..\..\..\Core\Core.Infrastructure\Core.Infrastructure.csproj" />
         <ProjectReference Include="..\MediaCatalog.Application\MediaCatalog.Application.csproj" />
+        <ProjectReference Include="..\MediaCatalog.Persistence\MediaCatalog.Persistence.csproj" />
     </ItemGroup>
 
 </Project>

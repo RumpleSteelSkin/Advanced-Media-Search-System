@@ -19,10 +19,11 @@ public class UploadFileCommandHandler(
 
         var uploadedEvent = new FileUploadedEvent
         {
-            FileName = request.FileName ?? request.File.FileName,
+            FileName = request.File.FileName,
             ContentType = request.File.ContentType,
             Url = url,
-            Description = request.Description ?? string.Empty,
+            Title = request.CreateFileDto.Title ?? request.File.FileName,
+            Description = request.CreateFileDto.Description ?? string.Empty,
             Size = request.File.Length,
             UploadedByUserId = Guid.Parse(JwtHelper.GetUserIdFromToken(accessor.HttpContext?.User) ?? string.Empty)
         };

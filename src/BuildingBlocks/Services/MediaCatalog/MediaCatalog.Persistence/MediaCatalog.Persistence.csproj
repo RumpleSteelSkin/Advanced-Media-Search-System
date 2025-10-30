@@ -7,12 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.10">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10"/>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\Core\Core.Persistence\Core.Persistence.csproj" />
+        <ProjectReference Include="..\MediaCatalog.Application\MediaCatalog.Application.csproj" />
+        <ProjectReference Include="..\MediaCatalog.Domain\MediaCatalog.Domain.csproj"/>
     </ItemGroup>
 
 </Project>

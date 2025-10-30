@@ -1,6 +1,7 @@
 using FileService.Application.Features.FileRecord.Commands.DeleteFile;
 using FileService.Application.Features.FileRecord.Commands.UploadFile;
 using FileService.Application.Features.Queries.GetFileObjectDetail;
+using FileService.Application.Features.Shared.DTOs.Files;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,10 +14,12 @@ public class FilesController(IMediator mediator) : ControllerBase
     [HttpPost("upload")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> Upload(IFormFile? file, CancellationToken cancellationToken)
+    public async Task<IActionResult> Upload(IFormFile? file, [FromForm] string? title, [FromForm] string? description,
+        CancellationToken cancellationToken)
     {
         if (file is null || file.Length == 0) return BadRequest("File not uploaded");
-        var url = await mediator.Send(new UploadFileCommand(file), cancellationToken);
+        CreateFileDto createFileDto = new(title, description);
+        var url = await mediator.Send(new UploadFileCommand(file, createFileDto), cancellationToken);
         return Ok(new { Url = url });
     }
 

@@ -3,7 +3,6 @@ using Identity.Persistence.Context;
 using Identity.Persistence.Options;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
@@ -11,8 +10,7 @@ namespace Identity.Persistence.Extensions;
 
 public static class ServiceRegistration
 {
-    public static void AddPersistenceServices(this IServiceCollection services,
-        IConfiguration configuration)
+    public static void AddPersistenceServices(this IServiceCollection services)
     {
         #region Entity Framework Services
 

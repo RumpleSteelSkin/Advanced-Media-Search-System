@@ -1,6 +1,9 @@
-namespace Core.Domain.DTOs.Events.Files;
+using Core.Application.Pipelines.Transactional;
+using MediatR;
 
-public class FileUploadedEvent
+namespace MediaCatalog.Application.Features.MediaFileObjects.Commands.Create;
+
+public record CreateMediaFileObjectCommand : IRequest<string>, ITransactional
 {
     public string? Url { get; set; }
     public string? Title { get; set; }
@@ -9,4 +12,5 @@ public class FileUploadedEvent
     public string? ContentType { get; set; }
     public long Size { get; set; }
     public Guid? UploadedByUserId { get; init; }
+    public bool Status { get; set; }
 }

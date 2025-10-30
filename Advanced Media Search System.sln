@@ -56,6 +56,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaCatalog.Domain", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaCatalog.Presentation", "src\BuildingBlocks\Services\MediaCatalog\MediaCatalog.Presentation\MediaCatalog.Presentation.csproj", "{0D444C32-5D24-4889-AD92-0BD9F37E7C4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Persistence", "src\BuildingBlocks\Core\Core.Persistence\Core.Persistence.csproj", "{B3094087-CCCA-4E3E-8870-4D6B9D748192}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,7 @@ Global
 		{BB58AD92-5A86-44D6-86E5-8FB0002819A2} = {465C6F91-A695-4416-B2BE-0FE6214816A9}
 		{D79D210A-72E3-479F-8753-BDE375D16B7B} = {465C6F91-A695-4416-B2BE-0FE6214816A9}
 		{0D444C32-5D24-4889-AD92-0BD9F37E7C4C} = {465C6F91-A695-4416-B2BE-0FE6214816A9}
+		{B3094087-CCCA-4E3E-8870-4D6B9D748192} = {0A90B4AE-FFEC-47A9-8470-E741EBBBB652}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{70EF7016-5329-428B-97CA-69FF4EFF3D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -158,5 +161,9 @@ Global
 		{0D444C32-5D24-4889-AD92-0BD9F37E7C4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D444C32-5D24-4889-AD92-0BD9F37E7C4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D444C32-5D24-4889-AD92-0BD9F37E7C4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3094087-CCCA-4E3E-8870-4D6B9D748192}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3094087-CCCA-4E3E-8870-4D6B9D748192}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3094087-CCCA-4E3E-8870-4D6B9D748192}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3094087-CCCA-4E3E-8870-4D6B9D748192}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

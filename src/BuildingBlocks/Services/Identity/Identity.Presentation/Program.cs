@@ -15,7 +15,7 @@ builder.Services.AddCoreJwtAuthentication(builder.Configuration);
 
 
 builder.Services.AddPresentationServices(builder.Configuration);
-builder.Services.AddPersistenceServices(builder.Configuration);
+builder.Services.AddPersistenceServices();
 builder.Services.AddApplicationServices();
 
 var app = builder.Build();
