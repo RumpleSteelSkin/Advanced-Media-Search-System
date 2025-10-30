@@ -13,7 +13,9 @@ public static class ServiceRegistration
         services.Configure<MediaCatalogDbSettings>(configuration.GetSection(nameof(MediaCatalogDbSettings)));
 
         #endregion
+
         services.AddHttpContextAccessor();
+        services.AddControllers();
         services.AddOpenApi();
         services.AddAuthorization();
         services.AddCoreMassTransitWithConsumers<FileUploadedEventConsumer>(configuration);

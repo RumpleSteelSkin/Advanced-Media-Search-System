@@ -11,7 +11,8 @@ public static class AppRegistration
         #endregion
 
         #region Other Services
-        
+
+        app.MapControllers();
         app.UseHttpsRedirection();
         app.UseAuthentication();
         app.UseAuthorization();

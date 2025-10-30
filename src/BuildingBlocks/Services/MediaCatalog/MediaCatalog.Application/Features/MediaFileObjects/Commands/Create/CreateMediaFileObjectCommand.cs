@@ -5,6 +5,7 @@ namespace MediaCatalog.Application.Features.MediaFileObjects.Commands.Create;
 
 public record CreateMediaFileObjectCommand : IRequest<string>, ITransactional
 {
+    public string? ObjectName { get; set; }
     public string? Url { get; set; }
     public string? Title { get; set; }
     public string? FileName { get; set; }

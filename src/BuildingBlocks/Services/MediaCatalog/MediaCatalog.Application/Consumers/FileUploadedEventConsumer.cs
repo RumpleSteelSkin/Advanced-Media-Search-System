@@ -11,6 +11,7 @@ public class FileUploadedEventConsumer(IMediator mediator) : IConsumer<FileUploa
     {
         await mediator.Send(new CreateMediaFileObjectCommand
         {
+            ObjectName = context.Message.ObjectName,
             Title = context.Message.Title,
             ContentType = context.Message.ContentType,
             FileName = context.Message.FileName,

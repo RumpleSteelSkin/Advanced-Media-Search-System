@@ -112,7 +112,7 @@ public class EntityFrameworkRepositoryBase<TEntity, TId, TContext>(TContext cont
         if (ignoreQueryFilters) query = query.IgnoreQueryFilters();
         if (!enableTracking) query = query.AsNoTracking();
         if (!include) query = query.IgnoreAutoIncludes();
-        return await query.FirstOrDefaultAsync(x => EqualityComparer<TId>.Default.Equals(x.Id, id), cancellationToken);
+        return await query.FirstOrDefaultAsync(x => x.Id != null && x.Id.Equals(id), cancellationToken);
     }
 
     public async Task<IReadOnlyList<TEntity>> GetByIdsAsync(

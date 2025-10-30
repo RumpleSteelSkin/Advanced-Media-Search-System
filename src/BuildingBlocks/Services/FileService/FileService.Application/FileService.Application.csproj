@@ -9,6 +9,8 @@
     <ItemGroup>
         <PackageReference Include="MediatR" Version="12.5.0" />
         <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="2.3.0"/>
+        <PackageReference Include="MassTransit" Version="8.5.5" />
+        <PackageReference Include="MassTransit.RabbitMQ" Version="8.5.5" />
     </ItemGroup>
 
     <ItemGroup>

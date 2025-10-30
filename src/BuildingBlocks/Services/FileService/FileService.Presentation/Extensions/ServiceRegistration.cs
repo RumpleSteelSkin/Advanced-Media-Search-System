@@ -1,4 +1,5 @@
 using Core.Infrastructure.Extensions;
+using FileService.Application.Consumers;
 
 namespace FileService.Presentation.Extensions;
 
@@ -10,6 +11,6 @@ public static class ServiceRegistration
         services.AddOpenApi();
         services.AddControllers();
         services.AddAuthorization();
-        services.AddCoreMassTransit(configuration);
+        services.AddCoreMassTransitWithConsumers<FileDeletedEventConsumer>(configuration);
     }
 }

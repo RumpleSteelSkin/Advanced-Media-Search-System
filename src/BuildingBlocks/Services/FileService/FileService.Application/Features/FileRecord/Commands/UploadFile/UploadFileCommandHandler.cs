@@ -19,6 +19,7 @@ public class UploadFileCommandHandler(
 
         var uploadedEvent = new FileUploadedEvent
         {
+            ObjectName = Path.GetFileName(url),
             FileName = request.File.FileName,
             ContentType = request.File.ContentType,
             Url = url,
