@@ -1,6 +1,5 @@
-using FileService.Application.Features.FileRecord.Commands.DeleteFile;
 using FileService.Application.Features.FileRecord.Commands.UploadFile;
-using FileService.Application.Features.Queries.GetFileObjectDetail;
+using FileService.Application.Features.FileRecord.Queries.GetFileObjectDetail;
 using FileService.Application.Features.Shared.DTOs.Files;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -22,7 +21,7 @@ public class FilesController(IMediator mediator) : ControllerBase
         var url = await mediator.Send(new UploadFileCommand(file, createFileDto), cancellationToken);
         return Ok(new { Url = url });
     }
-    
+
     [HttpGet("{objectName}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<IActionResult> GetObjectDetail(string objectName, CancellationToken cancellationToken)

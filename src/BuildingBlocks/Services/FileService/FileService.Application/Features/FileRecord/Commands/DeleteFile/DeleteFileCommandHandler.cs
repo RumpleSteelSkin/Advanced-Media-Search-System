@@ -8,7 +8,8 @@ public class DeleteFileCommandHandler(IFileStorageService fileStorageService)
 {
     public async Task<string> Handle(DeleteFileCommand request, CancellationToken cancellationToken)
     {
-        await fileStorageService.DeleteAsync(request.ObjectName, cancellationToken);
+        if (request.ObjectName == null) return $"{request.ObjectName} was not deleted";
+        await fileStorageService.DeleteAsync(request.ObjectName, cancellationToken: cancellationToken);
         return $"{request.ObjectName} was deleted";
     }
 }

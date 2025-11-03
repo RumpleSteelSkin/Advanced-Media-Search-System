@@ -15,7 +15,7 @@ public class UploadFileCommandHandler(
 {
     public async Task<string> Handle(UploadFileCommand request, CancellationToken cancellationToken)
     {
-        var url = await storageService.UploadAsync(request.File, cancellationToken);
+        var url = await storageService.UploadAsync(request.File, cancellationToken: cancellationToken);
 
         var uploadedEvent = new FileUploadedEvent
         {

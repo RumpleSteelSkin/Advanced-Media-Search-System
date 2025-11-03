@@ -1,9 +1,10 @@
+using Core.Application.Base.BaseResult;
 using Core.Application.Pipelines.Transactional;
 using MediatR;
 
 namespace MediaCatalog.Application.Features.MediaFileObjects.Commands.Create;
 
-public record CreateMediaFileObjectCommand : IRequest<string>, ITransactional
+public record CreateMediaFileObjectCommand : IRequest<BaseResult<object>>, ITransactional
 {
     public string? ObjectName { get; set; }
     public string? Url { get; set; }
