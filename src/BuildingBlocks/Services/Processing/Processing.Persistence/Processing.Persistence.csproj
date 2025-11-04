@@ -5,5 +5,10 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-
+    <ItemGroup>
+        <PackageReference Include="FFMpegCore" Version="5.4.0"/>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Processing.Domain\Processing.Domain.csproj" />
+    </ItemGroup>
 </Project>

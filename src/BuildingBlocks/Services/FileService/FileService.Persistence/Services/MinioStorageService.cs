@@ -46,7 +46,7 @@ public class MinioStorageService(
     {
         var customBucketName = _settings.BucketName;
         if (!string.IsNullOrEmpty(bucketNameExtend)) customBucketName += bucketNameExtend;
-        
+
         await _client.RemoveObjectAsync(new RemoveObjectArgs()
             .WithBucket(customBucketName)
             .WithObject(fileName), cancellationToken);
@@ -59,7 +59,7 @@ public class MinioStorageService(
     {
         var customBucketName = _settings.BucketName;
         if (!string.IsNullOrEmpty(bucketNameExtend)) customBucketName += bucketNameExtend;
-        
+
         var mediaObject = await _client.StatObjectAsync(
             new StatObjectArgs().WithBucket(customBucketName).WithObject(objectName), cancellationToken);
         var stringBuilder = new StringBuilder();
@@ -91,6 +91,28 @@ public class MinioStorageService(
         {
             await _client.MakeBucketAsync(new MakeBucketArgs().WithBucket(bucket), ct);
             logger.LogInformation("Bucket created: {Bucket}", bucket);
+
+            // Public read-only policy 
+            var policyJson = $$"""
+
+                               {
+                                 "Version": "2012-10-17",
+                                 "Statement": [
+                                   {
+                                     "Effect": "Allow",
+                                     "Principal": { "AWS": ["*"] },
+                                     "Action": ["s3:GetObject"],
+                                     "Resource": ["arn:aws:s3:::{{bucket}}/*"]
+                                   }
+                                 ]
+                               }
+                               """;
+
+            await _client.SetPolicyAsync(new SetPolicyArgs()
+                .WithBucket(bucket)
+                .WithPolicy(policyJson), ct);
+
+            logger.LogInformation("Public read policy applied to bucket: {Bucket}", bucket);
         }
     }
 }

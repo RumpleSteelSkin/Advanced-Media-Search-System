@@ -18,6 +18,9 @@ public static class ServiceRegistration
         services.AddControllers();
         services.AddOpenApi();
         services.AddAuthorization();
-        services.AddCoreMassTransitWithConsumers<FileUploadedEventConsumer>(configuration);
+        
+        services.AddCoreMassTransitWithConsumers(configuration: configuration, 
+            typeof(FileUploadedEventConsumer),
+            typeof(GifThumbUploadedEventConsumer));
     }
 }

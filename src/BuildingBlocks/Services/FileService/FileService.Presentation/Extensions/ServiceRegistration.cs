@@ -11,6 +11,7 @@ public static class ServiceRegistration
         services.AddOpenApi();
         services.AddControllers();
         services.AddAuthorization();
-        services.AddCoreMassTransitWithConsumers<FileDeletedEventConsumer>(configuration);
+        services.AddCoreMassTransitWithConsumers(configuration: configuration, typeof(FileDeletedEventConsumer),
+            typeof(GifCreatedEventConsumer));
     }
 }

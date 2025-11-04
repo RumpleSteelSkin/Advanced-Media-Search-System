@@ -49,6 +49,9 @@ namespace MediaCatalog.Persistence.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("ThumbUrl")
+                        .HasColumnType("text");
+
                     b.Property<string>("Title")
                         .HasColumnType("text");
 

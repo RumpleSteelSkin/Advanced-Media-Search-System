@@ -9,5 +9,13 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6"/>
     </ItemGroup>
+    
+    <ItemGroup>
+        <None Include="ffmpeg\**" CopyToOutputDirectory="Always"/>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <ProjectReference Include="..\Processing.Application\Processing.Application.csproj"/>
+    </ItemGroup>
 
 </Project>

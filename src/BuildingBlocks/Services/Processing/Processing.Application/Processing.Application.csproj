@@ -6,4 +6,16 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+        <PackageReference Include="MediatR" Version="12.5.0"/>
+        <PackageReference Include="MassTransit.RabbitMQ" Version="8.5.5"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\Core\Core.Domain\Core.Domain.csproj" />
+        <ProjectReference Include="..\..\..\Core\Core.Infrastructure\Core.Infrastructure.csproj" />
+        <ProjectReference Include="..\Processing.Domain\Processing.Domain.csproj"/>
+        <ProjectReference Include="..\Processing.Persistence\Processing.Persistence.csproj"/>
+    </ItemGroup>
+
 </Project>
